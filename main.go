@@ -1,16 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	var hello = "Olá, Mundo!"
-	var question string = " Como você está?"
+	var gavetas [2]string
 
-	var meet = hello + question
-	fmt.Println(meet)
-	fmt.Println(strings.ToUpper(meet))           // Converte para maiúsculas
-	fmt.Println(strings.Contains(meet, "Mundo")) // Verifica se contém "Mundo"
+	gavetas[0] = "Meias"
+	gavetas[1] = "Cuecas"
+
+	fmt.Println(gavetas)
+	fmt.Println("Conteúdo da gaveta 1:", gavetas[0])
+	fmt.Println("Conteúdo da gaveta 2:", gavetas[1])
 }
