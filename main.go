@@ -3,12 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	var gavetas [2]string
+	var gavetas []string
+	gavetas = append(gavetas, "Meias")
+	gavetas = append(gavetas, "Camisetas")
+	gavetas = append(gavetas, "Cuecas")
 
-	gavetas[0] = "Meias"
-	gavetas[1] = "Cuecas"
+	// Removendo o último item
+	gavetas = gavetas[:2]
 
 	fmt.Println(gavetas)
-	fmt.Println("Conteúdo da gaveta 1:", gavetas[0])
-	fmt.Println("Conteúdo da gaveta 2:", gavetas[1])
 }
