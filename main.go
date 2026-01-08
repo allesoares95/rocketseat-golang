@@ -3,13 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	var gavetas []string
-	gavetas = append(gavetas, "Meias")
-	gavetas = append(gavetas, "Camisetas")
-	gavetas = append(gavetas, "Cuecas")
+	var pessoas = map[string]int{}
+	pessoas["Alice"] = 30
+	pessoas["Bob"] = 25
+	pessoas["Charlie"] = 35
 
-	// Removendo o último item
-	gavetas = gavetas[:2]
+	if idade, ok := pessoas["Bob"]; ok {
+		fmt.Println("Idade de Bob:", idade, ok)
+	} else {
+		fmt.Println("Bob não encontrado")
+	}
 
-	fmt.Println(gavetas)
+	delete(pessoas, "Bob")
+	fmt.Println("Map após remover Bob:", pessoas)
 }
