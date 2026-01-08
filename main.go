@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    fmt.Println("Hello, World!")
+	var hello = "Olá, Mundo!"
+	var question string = " Como você está?"
+
+	var meet = hello + question
+	fmt.Println(meet)
+	fmt.Println(strings.ToUpper(meet))           // Converte para maiúsculas
+	fmt.Println(strings.Contains(meet, "Mundo")) // Verifica se contém "Mundo"
 }
