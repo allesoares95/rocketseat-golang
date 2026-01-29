@@ -5,10 +5,14 @@ import (
 )
 
 func main() {
-	players := map[string]int{
-		"alexandre": 10,
-	}
+	dia := "sábado"
 
-	value, ok := players["alexandre"]
-	fmt.Println("pontos:", value, ok)
+	switch dia {
+	case "sábado", "domingo":
+		fmt.Println("Final de semana!")
+	case "segunda", "terça", "quarta", "quinta", "sexta":
+		fmt.Println("Dia útil")
+	default:
+		fmt.Println("Dia inválido")
+	}
 }
