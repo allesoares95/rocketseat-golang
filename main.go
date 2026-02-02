@@ -1,20 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
-type Pessoa struct {
-	Nome string
+func producer(ch chan int) {
+	for i := 0; i < 5; i++ {
+		ch <- i
+	}
+
+	close(ch)
+}
+
+func consumer(ch chan int) {
+	for valor := range ch {
+		fmt.Println(valor)
+	}
+
+	fmt.Println("consumer finalizado")
 }
 
 func main() {
-	p1 := Pessoa{Nome: "Ana"}
-	p2 := Pessoa{Nome: "Bruno"}
+	ch := make(chan int)
 
-	fmt.Println(p1)
+	go producer(ch)
+	go consumer(ch)
+	go consumer(ch)
 
-	var p3 *Pessoa = &p1
-	p3.Nome = "Carla"
-
-	fmt.Println(p1)
-	fmt.Println(p2)
+	time.Sleep(1 * time.Second)
 }
