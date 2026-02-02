@@ -3,18 +3,18 @@ package main
 import "fmt"
 
 type Pessoa struct {
-	Nome  string
-	Idade int
-}
-
-func (p *Pessoa) Saudacao() {
-	p.Nome = "ale"
-	fmt.Printf("Olá, meu nome é %s e eu tenho %d anos.\n", p.Nome, p.Idade)
+	Nome string
 }
 
 func main() {
-	p1 := Pessoa{Nome: "Ana", Idade: 25}
-	p1.Saudacao()
+	p1 := Pessoa{Nome: "Ana"}
+	p2 := Pessoa{Nome: "Bruno"}
 
-	fmt.Println(p1.Nome)
+	fmt.Println(p1)
+
+	var p3 *Pessoa = &p1
+	p3.Nome = "Carla"
+
+	fmt.Println(p1)
+	fmt.Println(p2)
 }
